@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Portraits</title>
+  <link rel="stylesheet" href="css/books.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      padding: 2em;
+      background-color: #F2E9E4;
+      
+    }
+
+    h1{
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #22223B;
+    margin-bottom: 20px; 
+    }
+    </style>
+    
+</head>
+<body>
+
+  <h1>Books & Graphic Novels</h1>
+  
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+  
+  <div class="gallery">
+
+    <div class="roi-row">
+      <img src="images/roi1.jpeg" class="art-image" alt="ROI 1">
+      <img src="images/roi2.jpeg" class="art-image" alt="ROI 2">
+      <img src="images/roi3.jpeg" class="art-image" alt="ROI 3">
+      <img src="images/roi4.jpeg" class="art-image" alt="ROI 4">
+      <img src="images/roi5.jpeg" class="art-image" alt="ROI 5">
+      <img src="images/roi6.jpeg" class="art-image" alt="ROI 6">
+      <img src="images/roi7.jpeg" class="art-image" alt="ROI 7">
+    </div>
+  
+    <div class="graph-row">
+      <img src="images/graph1.jpeg" class="art-image" alt="Graph 1">
+      <img src="images/graph2.jpeg" class="art-image" alt="Graph 2">
+      <img src="images/graph3.jpeg" class="art-image" alt="Graph 3">
+      <img src="images/graph4.jpeg" class="art-image" alt="Graph 4">
+    </div>
+  
+  </div>
+  
+ 
+  <script>
+    const images = document.querySelectorAll('.art-image');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+  
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImg.src = img.src;
+      });
+    });
+  
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

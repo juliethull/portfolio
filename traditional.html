@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Portraits</title>
+  <link rel="stylesheet" href="css/digitalart.css">
+</head>
+<body>
+
+  <h1>Traditional Art</h1>
+  
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+  
+  <div class="gallery">
+      <img src="images/traditional1.png" alt="Portrait 1" class="art-image">
+      <img src="images/traditional2.png" alt="Portrait 1" class="art-image">
+      <img src="images/traditional3.png" alt="Portrait 1" class="art-image">
+      <img src="images/traditional4.png" alt="Portrait 1" class="art-image">
+      <img src="images/traditional5.png" alt="Portrait 1" class="art-image">
+  </div>
+ 
+  <script>
+    const images = document.querySelectorAll('.art-image');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+  
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImg.src = img.src;
+      });
+    });
+  
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

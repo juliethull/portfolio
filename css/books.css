@@ -1,0 +1,86 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 40px;
+    background: #fdfdfd;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 40px;
+    font-family: 'Passion One', sans-serif;
+    color: #333;
+  }
+  
+  .gallery {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  
+  .roi-row img {
+    width: calc(100% / 7 - 10px); /* 9 images, 10px accounts for spacing */
+    height: auto;
+  }
+  
+  .graph-row img {
+    width: calc(100% / 4 - 10px); /* 4 images */
+    height: auto;
+  }
+  
+  .art-image {
+    border-radius: 6px;
+    object-fit: cover;
+    transition: transform 0.2s;
+    cursor: zoom-in;
+  }
+  
+  .art-image:hover {
+    transform: scale(1.03);
+  }
+  
+  .art-image:hover {
+    transform: scale(1.02);
+  }
+  
+  .art-image:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Lightbox styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    text-align: center;
+  }
+  
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+  }
+  
+  .close {
+    position: fixed; /* not absolute */
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 1000; /* must be higher than the image */
+    cursor: pointer;
+  }
